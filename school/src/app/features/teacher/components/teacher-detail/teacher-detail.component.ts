@@ -12,7 +12,7 @@ import {Mode} from "../../../../shared/models/enums";
 })
 export class TeacherDetailComponent implements OnInit {
 
-  instruction = "Create Teacher";
+  instruction = "Add Teacher";
   mode = Mode.create;
   form: FormGroup;
   teacher: Teacher;
