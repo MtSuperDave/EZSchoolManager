@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const port = process.env.PORT_PRODUCT || 3000;
+const port = process.env.PORT_SCHOOL || 3000;
 
 const BASE_URL = '/fullstack';
 
