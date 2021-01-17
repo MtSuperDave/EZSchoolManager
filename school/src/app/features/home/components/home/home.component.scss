@@ -1,0 +1,26 @@
+.outer {
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.home-title {
+  position: relative;
+  top: 280px;
+  color: white;
+}
+
+.container {
+  justify-content: center;
+  height: 95vh;
+  width: 100vw;
+  background: url('../../../../../assets/school-836242_1920.jpg')  no-repeat center;
+  background-size:  cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

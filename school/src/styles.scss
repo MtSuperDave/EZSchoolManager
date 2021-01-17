@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+
+.form-controls {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  mat-form-field {
+    input {
+      caret-color: white;
+    }
+  }
+}
+
+mat-dialog-content  {
+  mat-form-field {
+    .mat-input-element {
+      caret-color: white;
+    }
+  }
+}
+
+.entity-search-input {
+  .mat-input-element {
+    padding-left: 8px;
+    caret-color: white;
+  }
+}
+
+.w-75{
+  max-width: 75px;
+}
+
+.w-100{
+  max-width: 100px;
+}
+
+.w-250{
+  max-width: 250px;
+}
+
+.w-300{
+  max-width: 300px;
+}
+
+.w-400{
+  max-width: 400px;
+}
+
+.th-center{
+  text-align: center;
+}
+
+.th-left{
+  text-align: left;
+}
+
+.th-right{
+  text-align: right;
+}
+
+.mat-header-cell.text-center {
+  display:flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.mat-cell.text-center {
+  display:flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.search-add-outer {
+  display: flex;
+}
+
+
+.search-add-inner {
+  max-width: 965px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-add-inner button {
+  max-height: 3em;
+  //margin-right: 45px;
+}
+
+.paginator {
+  display: flex;
+  align-items: flex-start;
+}
+
+.spinner-container {
+  height: 360px;
+  width: 390px;
+  position: fixed;
+}
+
+
+.entity-table {
+  min-height: 360px;
+  margin-top: 10px;
+}

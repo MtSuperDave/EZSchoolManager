@@ -1,0 +1,80 @@
+
+<h2>Students</h2>
+
+<ng-container *ngIf="!isAuthenticated">
+  <mat-error>Add, Edit and Delete are disabled when no user is logged in</mat-error>
+</ng-container>
+
+<ng-container class="search-add-outer">
+
+  <div class="search-add-inner">
+
+    <mat-form-field class="entity-search-input" appearance="standard">
+      <input  matInput  [placeholder]="'search students'" #input >
+    </mat-form-field>
+
+    <button mat-button class="mat-raised-button mat-primary"  [disabled]="!isAuthenticated"
+            (click)="createStudent()">Add Student</button>
+
+  </div>
+
+</ng-container>
+
+<div class="spinner-container" *ngIf="dataSource.loading$ | async">
+  <mat-spinner></mat-spinner>
+</div>
+
+<mat-table  class="entity-table mat-elevation-z8" [dataSource]="dataSource" matSort>
+
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef [ngClass]="'w-75'" mat-sort-header>#</mat-header-cell>
+    <mat-cell *matCellDef="let student" [ngClass]="'w-75'">{{student.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="firstName">
+    <mat-header-cell *matHeaderCellDef [ngClass]="'w-300'" mat-sort-header>First Name</mat-header-cell>
+    <mat-cell *matCellDef="let student" [ngClass]="'w-300'">{{student.firstName}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <mat-header-cell *matHeaderCellDef [ngClass]="'w-300'" mat-sort-header>Last Name</mat-header-cell>
+    <mat-cell *matCellDef="let student" [ngClass]="'w-300'">{{student.lastName}}</mat-cell>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="edit">
+    <mat-header-cell  *matHeaderCellDef [ngClass]="'w-100 text-center'">
+    </mat-header-cell>
+    <mat-cell *matCellDef="let student" [ngClass]="'w-100 text-center'">
+      <button mat-button class="mat-raised-button mat-primary"  [disabled]="!isAuthenticated"
+              (click)="editStudent(student)">Edit</button>
+    </mat-cell>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="delete">
+    <mat-header-cell  *matHeaderCellDef [ngClass]="'w-100 text-center'">
+    </mat-header-cell>
+    <mat-cell *matCellDef="let student" [ngClass]="'w-100 text-center'">
+      <button mat-button class="mat-raised-button mat-accent"  [disabled]="!isAuthenticated"
+              (click)="deleteStudent(student)">Delete</button>
+    </mat-cell>
+  </ng-container>
+
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+
+</mat-table>
+
+<div class="paginator">
+  <mat-paginator  [length]="numStudents"  [pageSize]="12"
+                  [pageSizeOptions]="[5, 10, 12]"></mat-paginator>
+</div>
+
