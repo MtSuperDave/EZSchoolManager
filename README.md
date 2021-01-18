@@ -17,7 +17,7 @@ or nodemon index.js
 
 note: backend expects mySQL database available.
 
-##FRONTEND
+## FRONTEND
 
 ### In command line navigate to school folder
 cd school
