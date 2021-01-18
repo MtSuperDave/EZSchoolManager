@@ -1,0 +1,5 @@
+CREATE TABLE `subject` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `description` varchar(120) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
