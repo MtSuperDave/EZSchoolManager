@@ -111,3 +111,5 @@ dist
 /.idea/fullstack-workshop-nov2020.iml
 /.idea/EZSchoolManager.iml
 /school/src/assets/denis-degioanni-9wH624ALFQA-unsplash.jpg
+/school/.editorconfig
+/microservices/school/src/envForAWS.txt
