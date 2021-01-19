@@ -35,9 +35,9 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.signupErrors$ = this.authService.signupErrors$;
 
     this.signupForm = this.fb.group({
-      username: ['dave@dave.com',Validators.required],
-      password: ['123456789aA',Validators.required],
-      password2: ['123456789aA',Validators.required]
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      password2: ['', Validators.required]
     }, {
         validators: this.passwordMatchValidator
     });
