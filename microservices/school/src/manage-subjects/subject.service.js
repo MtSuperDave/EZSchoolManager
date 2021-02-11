@@ -59,12 +59,10 @@ class SubjectService {
         ;`;
 
     COUNT_SUBJECTS = `SELECT
-            COUNT(*) as count,
-            description
+            COUNT(*) as count
             FROM subject 
-            where description like ?
-            
-            ;`;
+            where description like ?;
+    `;
 
 
     SELECT_SUBJECT_BY_ID = `
@@ -164,8 +162,14 @@ class SubjectService {
     async countSubjects({filter}) {
         try {
             const result = await this.databaseService.query(this.COUNT_SUBJECTS, [`%${filter}%`] );
-            let { count } = result[0];
-            return count;
+
+            if (result && result[0]) {
+                 let { count } = result[0];
+                 return count;
+            } else {
+                return 0;
+            }
+
         } catch (error) {
             console.error(error);
             throw error;

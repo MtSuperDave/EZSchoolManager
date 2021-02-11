@@ -92,12 +92,10 @@ class TeacherService {
     `;
 
     COUNT_TEACHERS = `SELECT
-            COUNT(*) as count,
-            teacher.last_name
+            COUNT(*) as count
             FROM teacher
-            where teacher.last_name like ?
-            
-            ;`;
+            where teacher.last_name like ?;
+    `;
 
     constructor() {
         this.databaseService = new DatabaseService();
