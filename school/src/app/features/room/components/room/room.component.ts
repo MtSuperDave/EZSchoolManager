@@ -17,10 +17,10 @@ import {AuthService} from "../../../../shared/services/auth.service";
 })
 export class RoomComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  @ViewChild(MatSort, { static: false })
+  @ViewChild(MatSort)
   sort: MatSort;
 
-  @ViewChild(MatTable, { static: false })
+  @ViewChild(MatTable)
   matTable: MatTable<any>;
 
   dataSource = new MatTableDataSource([]);

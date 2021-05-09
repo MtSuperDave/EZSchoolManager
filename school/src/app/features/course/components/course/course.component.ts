@@ -20,16 +20,16 @@ import {AuthService} from "../../../../shared/services/auth.service";
 })
 export class CourseComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  @ViewChild(MatSort, { static: false })
+  @ViewChild(MatSort)
   sort: MatSort;
 
-  @ViewChild(MatTable, { static: false })
+  @ViewChild(MatTable)
   matTable: MatTable<any>;
 
-  @ViewChild(MatPaginator, { static: false })
+  @ViewChild(MatPaginator)
   paginator: MatPaginator;
 
-  @ViewChild('input', { static: false })
+  @ViewChild('input')
   input: ElementRef;
 
   dataSource: CourseDatasource;

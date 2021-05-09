@@ -19,16 +19,16 @@ import {MatPaginator} from "@angular/material/paginator";
 })
 export class TeacherComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  @ViewChild(MatSort, { static: false })
+  @ViewChild(MatSort)
   sort: MatSort;
 
-  @ViewChild(MatTable, { static: false })
+  @ViewChild(MatTable)
   matTable: MatTable<any>;
 
-  @ViewChild(MatPaginator, { static: false })
+  @ViewChild(MatPaginator)
   paginator: MatPaginator;
 
-  @ViewChild('input', { static: false })
+  @ViewChild('input')
   input: ElementRef;
 
   dataSource: TeacherDatasource;
