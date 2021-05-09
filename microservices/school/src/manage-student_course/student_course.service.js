@@ -104,14 +104,12 @@ class StudentCourseService {
 
 
     COUNT_STUDENT_COURSES = `SELECT
-            COUNT(*) as count,
-            course.name
+            COUNT(*) as count 
             FROM student_course as sc
             JOIN course
             ON course.id = sc.course_id
-            where course.name like ?
-            
-            ;`;
+            where course.name like ?;
+    `;
 
 
     SELECT_STUDENT_COURSE_BY_STUDENT_ID = `

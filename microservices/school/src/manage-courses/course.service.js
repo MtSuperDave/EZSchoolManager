@@ -246,12 +246,10 @@ class CourseService {
     `;
 
     COUNT_COURSES = `SELECT
-            COUNT(*) as count,
-            course.name
+            COUNT(*) as count
             FROM course
-            where course.name like ?
-            
-            ;`;
+            where course.name like ?;
+    `;
 
 
     SELECT_ALL_COURSE_FOR_TEACHER = `
@@ -296,16 +294,14 @@ class CourseService {
     `;
 
     COUNT_COURSES_FOR_SUBJECT = `
-        SELECT COUNT(*) as count,
-        course.subject_id
+        SELECT COUNT(*) as count
         FROM course
         WHERE course.subject_id = ?;
    `;
 
 
     COUNT_COURSES_FOR_TEACHER = `
-        SELECT COUNT(*) as count,
-        course.teacher_id
+        SELECT COUNT(*) as count
         FROM course
         WHERE course.teacher_id = ?;
    `;
@@ -436,8 +432,12 @@ class CourseService {
     async countCourses({filter}) {
         try {
             const result = await this.databaseService.query(this.COUNT_COURSES, [`%${filter}%`] );
-            let { count } = result[0];
-            return count;
+            if (result && result[0]) {
+               let { count } = result[0];
+               return count;
+            } else {
+                return 0;
+            }
         } catch (error) {
             console.error(error);
             throw error;
@@ -479,8 +479,13 @@ class CourseService {
     async countCoursesForSubject(id) {
         try {
             const result = await this.databaseService.query(this.COUNT_COURSES_FOR_SUBJECT, [ id ]);
-            let { count } = result[0];
-            return count;
+            
+            if(result && result[0]) {
+               let { count } = result[0];
+               return count; 
+            } else {
+                return 0;
+            }
         } catch (error) {
             console.error(error);
             throw error;
